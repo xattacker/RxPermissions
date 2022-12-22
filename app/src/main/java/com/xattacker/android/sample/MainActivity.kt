@@ -22,7 +22,8 @@ class MainActivity : AppCompatActivity()
     fun onButtonClick(view: View)
     {
         rxp?.request(
-            Manifest.permission.WRITE_EXTERNAL_STORAGE
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.ACCESS_FINE_LOCATION
         )?.subscribe {
                 enable ->
                android.util.Log.d("aaa", "permission result: " + enable)
