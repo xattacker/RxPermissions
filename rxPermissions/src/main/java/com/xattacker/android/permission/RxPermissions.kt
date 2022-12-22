@@ -182,7 +182,7 @@ class RxPermissions
 
     private fun request(trigger: Observable<*>, vararg permissions: String): Observable<Permission>
     {
-        require(permissions.size == 0) {"RxPermissions.request/requestEach requires at least one input permission"}
+        require(permissions.size > 0) {"RxPermissions.request/requestEach requires at least one input permission"}
 
         return oneOf(trigger, pending(*permissions)).flatMap(object :
                 Function<Any?, Observable<Permission?>>
