@@ -1,12 +1,12 @@
-# RxActivityResult
-an Android RX ActivityResult Component
+# RxPermissions
+an Android RX Permissions Component
 
-make Android ActivityResult callback more easily
+make Android Permissions callback more easily
 
 
 ### Setup:
 
-minSdkVersion: 15 [ ![Download](https://api.bintray.com/packages/xattacker/maven/RxActivityResult/images/download.svg?version=1.0.2) ](https://bintray.com/xattacker/maven/RxActivityResult/1.0.2/link)
+minSdkVersion: 15 [ ![Download](https://api.bintray.com/packages/xattacker/maven/RxPermissions/images/download.svg?version=1.0.0) ](https://bintray.com/xattacker/maven/RxPermissions/1.0.0/link)
 
 ``` 
 allprojects {
@@ -17,23 +17,17 @@ allprojects {
 }
 
 dependencies {
-    implementation 'com.xattacker.android:RxActivityResult:1.0.2'
+    implementation 'com.xattacker.android:RxPermissions:1.0.0'
 }
 ``` 
 
 ### How to use:
 ``` 
-	val intent = Intent(this, ResultActivity::class.java)
-	
-        val rx = RxActivityResult(this)
-        rx.startActivityForResult(intent)
-            .subscribe {
-	    	result ->
-                android.util.Log.d("aaa", "result: " + result.resultCode)
-
-                if (result.resultCode == Activity.RESULT_OK && result.data != null)
-                {
-                    android.util.Log.d("aaa", "result intent: " + result.data!!.extras.getString("result"))
-                }
-            }
+        val rxp = RxPermissions(this) // pass FragmentActivity instance
+        rxp.request(
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+        ).subscribe {
+                enable ->
+               android.util.Log.d("aaa", "permission result: " + enable)
+        }
 ``` 
