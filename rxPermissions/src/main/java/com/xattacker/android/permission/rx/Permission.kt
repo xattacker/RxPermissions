@@ -1,4 +1,4 @@
-package com.xattacker.android.permission
+package com.xattacker.android.permission.rx
 
 import kotlin.jvm.JvmOverloads
 import io.reactivex.Observable

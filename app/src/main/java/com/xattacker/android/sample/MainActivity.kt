@@ -4,7 +4,7 @@ import android.Manifest
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.xattacker.android.permission.RxPermissions
+import com.xattacker.android.permission.rx.RxPermissions
 
 class MainActivity : AppCompatActivity()
 {

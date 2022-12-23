@@ -1,4 +1,4 @@
-package com.xattacker.android.permission
+package com.xattacker.android.permission.rx
 
 import android.annotation.TargetApi
 import android.content.pm.PackageManager
