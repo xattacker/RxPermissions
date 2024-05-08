@@ -1,16 +1,14 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
-apply plugin: 'com.novoda.bintray-release' // for jCenter uploading
 
 android {
-    compileSdkVersion 28
+    compileSdk 33
+
+    namespace 'com.xattacker.android.permission'
 
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0.0"
+        targetSdkVersion 33
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -21,20 +19,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-}
 
-// for jCenter uploading
-publish {
-    userOrg = 'xattacker'        //bintray.com用户名
-    groupId = 'com.xattacker.android'    //jcenter上的路径
-    artifactId = 'RxPermission'   //项目名称
-    publishVersion = '1.0.0'//版本号
-    desc = 'Android Rx related component library'//描述，自由填写
-    website = 'https://github.com/xattacker/RxPermissions' // 网址，自由填写
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = "17"
+    }
 }
 
 dependencies {
