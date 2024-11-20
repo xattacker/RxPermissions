@@ -6,18 +6,19 @@ make Android Permissions callback more easily
 
 ### Setup:
 
-minSdkVersion: 15 [ ![Download](https://api.bintray.com/packages/xattacker/maven/RxPermissions/images/download.svg?version=1.0.0) ](https://bintray.com/xattacker/maven/RxPermissions/1.0.0/link)
+minSdkVersion: 15
 
 ``` 
 allprojects {
     repositories {
         ...
-        jcenter()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
 }
 
 dependencies {
-    implementation 'com.xattacker.android:RxPermissions:1.0.0'
+    implementation 'com.github.xattacker:RxPermissions:1.0.0'
 }
 ``` 
 
