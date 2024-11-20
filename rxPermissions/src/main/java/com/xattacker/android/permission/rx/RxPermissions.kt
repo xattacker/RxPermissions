@@ -55,7 +55,8 @@ class RxPermissions
                 {
                     rxPermissionsFragment = getRxPermissionsFragment(fragmentManager)
                 }
-                return rxPermissionsFragment!!
+
+                return rxPermissionsFragment ?: RxPermissionsFragment()
             }
         }
     }

@@ -34,7 +34,12 @@ class RxPermissionsFragment : Fragment()
     )
     {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode != PERMISSIONS_REQUEST_CODE) return
+
+        if (requestCode != PERMISSIONS_REQUEST_CODE)
+        {
+            return
+        }
+
         val shouldShowRequestPermissionRationale = BooleanArray(permissions.size)
         for (i in permissions.indices)
         {
@@ -42,6 +47,7 @@ class RxPermissionsFragment : Fragment()
                 permissions[i]
             )
         }
+
         onRequestPermissionsResult(permissions, grantResults, shouldShowRequestPermissionRationale)
     }
 
