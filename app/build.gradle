@@ -2,12 +2,12 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdk 34
+    compileSdk 36
 
     defaultConfig {
         applicationId "com.xattacker.android.sample"
         minSdkVersion 19
-        targetSdkVersion 34
+        targetSdkVersion 36
 
         versionCode 1
         versionName "1.0"
